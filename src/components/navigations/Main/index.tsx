@@ -14,7 +14,7 @@ const Main = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path='/' exact />
+                <Route path='/' exact component={() => <div>38do</div>} />
                 <Route path='/agreement' component={Agreement} />
                 <Route path='/agreement-location' component={AgreementLocation} />
                 <Route path='/privacy-policy' component={PrivacyPolicy} />
