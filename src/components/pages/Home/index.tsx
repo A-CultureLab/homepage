@@ -5,15 +5,7 @@ import styles from './styles.module.css'
 
 const Home = () => {
     return <>
-        <head>
-            <meta property='description' content='댕댕이와 친구만들자' />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="38°" />
-            <meta property="og:image" content="https://38do.kr/mobile_banner.jpg" />
-            <meta property="og:description" content="댕댕이와 친구만들자" />
-            <meta property="og:site_name" content="38°" />
-            <meta property="og:locale" content="ko_KR" />
-        </head>
+
         <div className={styles.container} >
             <div className={styles.infoContainer} >
                 <img
