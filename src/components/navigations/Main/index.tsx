@@ -6,9 +6,9 @@ import {
 
 import Agreement from "../../pages/Agreement";
 import AgreementLocation from "../../pages/AgreementLocation";
+import Download from "../../pages/Download";
 import Home from "../../pages/Home";
 import PrivacyPolicy from "../../pages/PrivacyPolicy";
-import React from 'react'
 import Support from "../../pages/Support";
 
 const Main = () => {
@@ -20,6 +20,7 @@ const Main = () => {
                 <Route path='/agreement-location' component={AgreementLocation} />
                 <Route path='/privacy-policy' component={PrivacyPolicy} />
                 <Route path='/support' component={Support} />
+                <Route path='/download' component={Download} />
             </Switch>
         </BrowserRouter>
     )
