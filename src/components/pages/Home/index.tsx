@@ -1,11 +1,18 @@
 import { APPSTORE_URL, PLAYSTORE_URL } from '../../../constants/values'
 import { IoLogoApple, IoLogoGooglePlaystore } from 'react-icons/io5';
 
+import { analytics } from '../../../lib/firebase';
+import { logEvent, } from '@firebase/analytics';
 import styles from './styles.module.css'
+import { useEffect } from 'react';
 
 const Home = () => {
-    return <>
 
+    useEffect(() => {
+        logEvent(analytics, 'homepage')
+    }, [])
+
+    return <>
         <div className={styles.container} >
             <div className={styles.infoContainer} >
                 <img
@@ -19,15 +26,18 @@ const Home = () => {
                     <h2 className={styles.subTitle}>댕댕이와 친구만들자</h2>
                 </div> */}
                 <div className={styles.left} >
-
-                    <a href={APPSTORE_URL} ><div className={styles.downloadBtn} >
-                        <IoLogoApple size={24} fill={'#888'} />
-                        <div className={styles.downloadText} >App Store</div>
-                    </div></a>
-                    <a href={PLAYSTORE_URL} ><div className={styles.downloadBtn} >
-                        <IoLogoGooglePlaystore size={24} fill={'#888'} />
-                        <div className={styles.downloadText} >Google Play</div>
-                    </div></a>
+                    <a href={APPSTORE_URL} onClick={() => logEvent(analytics, 'click_home_store')} >
+                        <div className={styles.downloadBtn} >
+                            <IoLogoApple size={24} fill={'#888'} />
+                            <div className={styles.downloadText} >App Store</div>
+                        </div>
+                    </a>
+                    <a href={PLAYSTORE_URL} onClick={() => logEvent(analytics, 'click_home_store')} >
+                        <div className={styles.downloadBtn} >
+                            <IoLogoGooglePlaystore size={24} fill={'#888'} />
+                            <div className={styles.downloadText} >Google Play</div>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div className={styles.bottom} >
